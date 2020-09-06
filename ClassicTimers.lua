@@ -1,5 +1,5 @@
 ------------------------------------- Classic Timers library for DOTA 2 Created by Goshante, 2020 -------------------------------------
---------------------------------------------------------------- v1.2 ------------------------------------------------------------------
+--------------------------------------------------------------- v1.3 ------------------------------------------------------------------
 --
 -- What the hell is this?
 --      This is recreation of classic timers Warcraft III JASS system for DOTA 2 lua scripting with 
@@ -189,6 +189,11 @@ function ___GlobalTimerThinker()
                                 end
                             end
                         end
+                    end
+                else
+                    if ClassicTimers.container[i].autodie then
+                        destroyQueue[dsqSize] = i
+                        dsqSize = dsqSize + 1
                     end
                 end
             end
